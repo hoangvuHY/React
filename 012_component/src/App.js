@@ -13,7 +13,8 @@ function App() {
       <Header></Header>
       <Content tieude="Cách sử dụng props bằng Class" linkanh='img/01.jpg' trichdan='Irure tortor hac mol    it arcu do qui    .' ></Content>
       <Content tieude="Tin Tức số 2" linkanh='img/02.jpg' trichdan='I it quos totam.' ></Content>
-      <Content tieude="Tin Tức số 3"  linkanh='img/03.jpg' trichdan='I curae culp ri '></Content>
+      <Content tieude="Tin Tức số 3" linkanh='img/03.jpg' trichdan='I curae culp ri '></Content>
+
       <Fotter />
     </div>
   );
