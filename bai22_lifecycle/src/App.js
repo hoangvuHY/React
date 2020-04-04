@@ -1,26 +1,60 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, { Component } from 'react';
 import './App.css';
+import Props from './Props';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+
+class App extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      trangthai: "Khoi tao",
+      trangthai2: "Khoi tao 2"
+    }
+  }
+
+
+  componentWillMount() {
+    console.log('componentWillMount Đang chạy');
+  }
+
+  componentDidMount() {
+    console.log('ComponentDidMout da chay roi');
+  }
+
+  shouldComponentUpdate(nextProps, nextState) {
+    console.log('shouldComponentUpdate da chay roi');
+    return true;
+  }
+  componentWillUpdate(nextProps, nextState) {
+    console.log('componentWillUpdate da chay roi');
+
+  }
+  componentDidUpdate(prevProps, prevState) {
+    console.log('componentDidUpdate da chay roi');
+
+  }
+
+  capnhatSate  = () => {
+   this.setState({
+     trangthai:" Trang thai da duoc update 1",
+     trangthai2:" Trang thai da duoc update 2"
+   });
+  }
+
+
+  render() {
+    console.log('Đây là hàm render đã chạy');
+    console.log(this.state.trangthai);
+    return (
+      <div className = 'abc'> 
+        <button onClick={() => this.capnhatSate()}>Click Update</button>
+        <Props name={this.state.trangthai2}></Props>
+      </div>
+    );
+  }
 }
+
+
+
 
 export default App;
