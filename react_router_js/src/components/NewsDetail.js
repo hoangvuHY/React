@@ -45,14 +45,14 @@ class NewsDetail extends Component {
                         <div className="col-12">
                             <div className="card-deck">
                                 <div className="card">
-                                    <a href="Chitiet.html"><img className="card-img-top" src="http://placehold.it/500x400" alt="" /></a>
+                                    <a href="/tin-chi-tiet"><img className="card-img-top" src="http://placehold.it/500x400" alt="" /></a>
                                     <div className="card-body">
                                         <h4 className="card-title">Title</h4>
                                         <p className="card-text">Text</p>
                                     </div>
                                 </div>
                                 <div className="card">
-                                    <a href="Chitiet.html"><img className="card-img-top" src="http://placehold.it/500x400" alt="" /></a>
+                                    <a href="/tin-chi-tiet"><img className="card-img-top" src="http://placehold.it/500x400" alt="" /></a>
                                     <div className="card-body">
                                         <h4 className="card-title">Title</h4>
                                         <p className="card-text">Text</p>
@@ -61,14 +61,14 @@ class NewsDetail extends Component {
                             </div>
                             <div className="card-deck">
                                 <div className="card">
-                                    <a href="Chitiet.html"><img className="card-img-top" src="http://placehold.it/500x400" alt="" /></a>
+                                    <a href="/tin-chi-tiet"><img className="card-img-top" src="http://placehold.it/500x400" alt="" /></a>
                                     <div className="card-body">
                                         <h4 className="card-title">Title</h4>
                                         <p className="card-text">Text</p>
                                     </div>
                                 </div>
                                 <div className="card">
-                                    <a href="Chitiet.html"><img className="card-img-top" src="http://placehold.it/500x400" alt="" /></a>
+                                    <a href="/tin-chi-tiet"><img className="card-img-top" src="http://placehold.it/500x400" alt="" /></a>
                                     <div className="card-body">
                                         <h4 className="card-title">Title</h4>
                                         <p className="card-text">Text</p>

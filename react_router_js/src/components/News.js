@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import News_Items from './News_Items';
 
 class News extends Component {
     render() {
@@ -19,84 +20,12 @@ class News extends Component {
                 {/* tintuc */}
                 <div className="container mt-5">
                     <div className="row">
-                        <div className="col-4">
-                            <div className="card-deck">
-                                <div className="card">
-                                    <a href="Chitiet.html"> <img className="card-img-top" src="http://placehold.it/800x400" alt="" /></a>
-                                    <div className="card-body">
-                                        <h4 className="card-title"> <a href="Chitiet.html">Tin tuc so 2</a> </h4>
-                                        <p className="card-text">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Suscipit at
-                                        impedit consequuntur. Sed a molestiae atque quod fugit est in recusandae, distinctio
-                    ducimus odio iste tempora accusantium praesentium soluta explicabo!</p>
-                                    </div>
-                                </div>
-                            </div> <hr />
-                        </div>
-                        <div className="col-4">
-                            <div className="card-deck">
-                                <div className="card">
-                                    <a href="Chitiet.html"> <img className="card-img-top" src="http://placehold.it/800x400" alt="" /></a>
-                                    <div className="card-body">
-                                        <h4 className="card-title"> <a href="Chitiet.html">Tin tuc so 2</a> </h4>
-                                        <p className="card-text">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Suscipit at
-                                        impedit consequuntur. Sed a molestiae atque quod fugit est in recusandae, distinctio
-                    ducimus odio iste tempora accusantium praesentium soluta explicabo!</p>
-                                    </div>
-                                </div>
-                            </div> <hr />
-                        </div>
-                        <div className="col-4">
-                            <div className="card-deck">
-                                <div className="card">
-                                    <a href="Chitiet.html"> <img className="card-img-top" src="http://placehold.it/800x400" alt="" /></a>
-                                    <div className="card-body">
-                                        <h4 className="card-title"> <a href="Chitiet.html">Tin tuc so 2</a> </h4>
-                                        <p className="card-text">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Suscipit at
-                                        impedit consequuntur. Sed a molestiae atque quod fugit est in recusandae, distinctio
-                    ducimus odio iste tempora accusantium praesentium soluta explicabo!</p>
-                                    </div>
-                                </div>
-                            </div> <hr />
-                        </div>
-                        <div className="col-4">
-                            <div className="card-deck">
-                                <div className="card">
-                                    <a href="Chitiet.html"> <img className="card-img-top" src="http://placehold.it/800x400" alt="" /></a>
-                                    <div className="card-body">
-                                        <h4 className="card-title"> <a href="Chitiet.html">Tin tuc so 2</a> </h4>
-                                        <p className="card-text">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Suscipit at
-                                        impedit consequuntur. Sed a molestiae atque quod fugit est in recusandae, distinctio
-                    ducimus odio iste tempora accusantium praesentium soluta explicabo!</p>
-                                    </div>
-                                </div>
-                            </div> <hr />
-                        </div>
-                        <div className="col-4">
-                            <div className="card-deck">
-                                <div className="card">
-                                    <a href="Chitiet.html"> <img className="card-img-top" src="http://placehold.it/800x400" alt="" /></a>
-                                    <div className="card-body">
-                                        <h4 className="card-title"> <a href="Chitiet.html">Tin tuc so 2</a> </h4>
-                                        <p className="card-text">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Suscipit at
-                                        impedit consequuntur. Sed a molestiae atque quod fugit est in recusandae, distinctio
-                    ducimus odio iste tempora accusantium praesentium soluta explicabo!</p>
-                                    </div>
-                                </div>
-                            </div> <hr />
-                        </div>
-                        <div className="col-4">
-                            <div className="card-deck">
-                                <div className="card">
-                                    <a href="Chitiet.html"> <img className="card-img-top" src="http://placehold.it/800x400" alt="" /></a>
-                                    <div className="card-body">
-                                        <h4 className="card-title"> <a href="Chitiet.html">Tin tuc so 2</a> </h4>
-                                        <p className="card-text">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Suscipit at
-                                        impedit consequuntur. Sed a molestiae atque quod fugit est in recusandae, distinctio
-                    ducimus odio iste tempora accusantium praesentium soluta explicabo!</p>
-                                    </div>
-                                </div>
-                            </div> <hr />
-                        </div>
+
+                        <News_Items />
+                        <News_Items />
+                        <News_Items />
+                        <News_Items />
+                        <News_Items />
                     </div>{/* End row */}
                 </div>{/* End container */}
                 {/* End tintuc */}
