@@ -7,10 +7,8 @@ class Contact extends Component {
         super(props);
         this.state = {
             isRedirect: false,
-            fName: "",
-            fEmail: "",
-            fPhone: "",
-            fMessage: ''
+            fDay: "thu7"
+
         }
     }
     submitForm = (event) => {
@@ -26,12 +24,20 @@ class Contact extends Component {
             [name]: value
         });
     }
+    isFileChange = (event) => {
+        const name = event.target.files[0].name;
+        this.setState({
+            fImage:name
+        });
+    } 
     getValue = () => {
         var content = '';
         content += 'Name is: ' + this.state.fName;
         content += '/Name is: ' + this.state.fEmail;
         content += '/Phone is: ' + this.state.fPhone;
         content += '/Message is: ' + this.state.fMessage;
+        content += '/Date is: ' + this.state.fDay;
+        content += '/Image is: ' + this.state.fImage;
         return content;
 
     }
@@ -98,12 +104,20 @@ class Contact extends Component {
                                     <div className="form-group floating-label-form-group controls mb-0 pb-2">
                                         <label>Chọn ngày</label>
 
-                                        <select className="form-control" name="fNgay" onChange={this.isChange.bind(this)}>
+                                        <select value={this.state.fDay} className="form-control" name="fDay" onChange={this.isChange.bind(this)}>
                                             <option value="thu3">Ngày thứ 3</option>
                                             <option value="thu5">Ngày thứ 5</option>
                                             <option value="thu7">Ngày thứ 7</option>
                                             <option value="chunhat">Ngày chủ nhật</option>
                                         </select>
+                                        <p className="help-block text-danger" />
+                                    </div>
+                                </div>
+                                <div className="control-group">
+                                    <div className="form-group floating-label-form-group controls mb-0 pb-2">
+                                        <label>Chọn ngày</label>
+                                        <input onChange={this.isFileChange.bind(this)}  type="file" className="form-control-file" name="fImage"  />
+
                                         <p className="help-block text-danger" />
                                     </div>
                                 </div>

@@ -157,8 +157,7 @@
 
  @media (min-width:992px) {
    #mainNav {
-     border-color: transparent;
-     background-color: transparent
+     background: black;
    }
    #mainNav .navbar-brand {
      color: fade(white, 70%)

@@ -22,9 +22,7 @@ class Nav extends Component {
                             <li className="nav-item pr-5">
                                 <NavLink activeClassName='chon' to="/tin">Tin tức</NavLink>
                             </li>
-                            <li className="nav-item pr-5">
-                                <NavLink activeClassName='chon' to="/tin-chi-tiet">Tin chi tiết</NavLink>
-                            </li>
+                            
                             <li className="nav-item pr-5">
                                 <NavLink activeClassName='chon' to="/lien-he">Liên hệ</NavLink>
                             </li>
