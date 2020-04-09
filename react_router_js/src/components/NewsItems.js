@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 
 class NewsItems extends Component {
+
     to_slug = (str) => {
         // Chuyển hết sang chữ thường
         str = str.toLowerCase();
@@ -35,8 +36,8 @@ class NewsItems extends Component {
             <div className="col-4">
                 <div className="card-deck">
                     <div className="card">
-                        <Link to={"/tin-tuc/" + this.to_slug( this.props.tieude) + '.' + this.props.tinId + '.html'}> 
-                        <img className="card-img-top" className='img-fluid' src={this.props.anh} alt="" />
+                        <Link to={"/tin-tuc/" + this.to_slug(this.props.tieude) + '.' + this.props.tinId + '.html'}>
+                            <img className='img-fluid card-img-top' src={this.props.anh} alt="dsfdsfd" />
                         </Link>
                         <div className="card-body">
                             <h4 className="card-title"> <a href="/tin-chi-tiet">{this.props.tieude}</a> </h4>

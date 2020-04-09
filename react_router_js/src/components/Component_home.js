@@ -12,7 +12,7 @@ class Component_home extends Component {
                                 <div className="header-content mx-auto">
                                     <h1 className="mb-5">New Age is an app landing page that will help you beautifully showcase your new
                   mobile app, or anything else!</h1>
-                                    <a href="#download" className="btn btn-outline btn-xl js-scroll-trigger">Start Now for Free!</a>
+                                    <a href=" https://github.com/evcohen/eslint-plugin-jsx-a11y/blob/master/docs/rules/anchor-is-valid.mddownload" className="btn btn-outline btn-xl js-scroll-trigger">Start Now for Free!</a>
                                 </div>
                             </div>
                             <div className="col-lg-5 my-auto">
@@ -40,8 +40,8 @@ class Component_home extends Component {
                                 <h2 className="section-heading">Discover what all the buzz is about!</h2>
                                 <p>Our app is available on any mobile device! Download now to get started!</p>
                                 <div className="badges">
-                                    <a className="badge-link" href="#"><img src="img/google-play-badge.svg" alt="" /></a>
-                                    <a className="badge-link" href="#"><img src="img/app-store-badge.svg" alt="" /></a>
+                                    <a className="badge-link" href=" https://github.com/evcohen/eslint-plugin-jsx-a11y/blob/master/docs/rules/anchor-is-valid.md"><img src="img/google-play-badge.svg" alt="" /></a>
+                                    <a className="badge-link" href=" https://github.com/evcohen/eslint-plugin-jsx-a11y/blob/master/docs/rules/anchor-is-valid.md"><img src="img/app-store-badge.svg" alt="" /></a>
                                 </div>
                             </div>
                         </div>
@@ -117,7 +117,7 @@ class Component_home extends Component {
                     <div className="cta-content">
                         <div className="container">
                             <h2>Stop waiting.<br />Start building.</h2>
-                            <a href="#contact" className="btn btn-outline btn-xl js-scroll-trigger">Let's Get Started!</a>
+                            <a href=" https://github.com/evcohen/eslint-plugin-jsx-a11y/blob/master/docs/rules/anchor-is-valid.mdcontact" className="btn btn-outline btn-xl js-scroll-trigger">Let's Get Started!</a>
                         </div>
                     </div>
                     <div className="overlay" />
@@ -129,17 +129,17 @@ class Component_home extends Component {
             new friends!</h2>
                         <ul className="list-inline list-social">
                             <li className="list-inline-item social-twitter">
-                                <a href="#">
+                                <a href=" https://github.com/evcohen/eslint-plugin-jsx-a11y/blob/master/docs/rules/anchor-is-valid.md">
                                     <i className="fab fa-twitter" />
                                 </a>
                             </li>
                             <li className="list-inline-item social-facebook">
-                                <a href="#">
+                                <a href=" https://github.com/evcohen/eslint-plugin-jsx-a11y/blob/master/docs/rules/anchor-is-valid.md">
                                     <i className="fab fa-facebook-f" />
                                 </a>
                             </li>
                             <li className="list-inline-item social-google-plus">
-                                <a href="#">
+                                <a href=" https://github.com/evcohen/eslint-plugin-jsx-a11y/blob/master/docs/rules/anchor-is-valid.md">
                                     <i className="fab fa-google-plus-g" />
                                 </a>
                             </li>

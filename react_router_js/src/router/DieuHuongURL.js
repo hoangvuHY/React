@@ -6,18 +6,18 @@ import {
 import News from '../components/News';
 import NewsDetail from '../components/NewsDetail';
 import Contact from '../components/Contact';
-import Component_home from '../components/Component_home';
+import ComponentHome from '../components/Component_home';
 class DieuHuongURL extends Component {
     render() {
 
         return (
             <Switch>
-
-
                 <Route exact path='/home'>
-                    <Component_home />
+                    <ComponentHome />
                 </Route>
-
+                <Route exact path='/'>
+                    <ComponentHome />
+                </Route>
                 <Route exact path="/tin" component={News} />
                 <Route exact path="/tin-tuc/:slug.:id.html" component={NewsDetail} />
                 <Route exact path="/lien-he" component={Contact} />

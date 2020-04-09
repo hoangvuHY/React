@@ -46,8 +46,7 @@ class NewsDetail extends Component {
                             </div>
                         </div>
                     </div>
-                </header>
-
+                </header> 
                 {
 
                     dl.map((val, key) => {
@@ -58,13 +57,12 @@ class NewsDetail extends Component {
                                         <img src={val.anh} alt="" className="img-fluid w-100" />
                                         <h3 className="lead text-center">{val.tieude}</h3>
                                         <hr className="my-2" />
-                                        <p>{val.noidung}</p>
-
+                                        <p>{val.noidung}</p> 
                                     </div>
-                                </div>
-
+                                </div> 
                             )
                         }
+                        return true;
                     })
                 }
 
@@ -76,7 +74,7 @@ class NewsDetail extends Component {
                                 {
                                     dl.map((val, key) => {
                                         if (val.id !== parseInt(this.props.match.params.id)) {
-
+ 
                                             if (dem <= 3) {
                                                 dem++;
                                                 return (
@@ -89,7 +87,9 @@ class NewsDetail extends Component {
                                                     />
                                                 )
                                             }
+                                                return true;
                                         }
+                                        return true;
                                     }
                                     )
                                 }

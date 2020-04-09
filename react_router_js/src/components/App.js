@@ -9,12 +9,9 @@ import {
 function App() {
   return (
     <Router>
-
-      <div className="App">
-        <Nav />
-        <DieuHuongURL />
-        <Footer />
-      </div>
+      <Nav />
+      <DieuHuongURL />
+      <Footer />
     </Router>
   );
 }
