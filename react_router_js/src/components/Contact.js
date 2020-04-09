@@ -12,7 +12,7 @@ class Contact extends Component {
             fPhone: "",
             fMessage: ''
         }
-    } 
+    }
     submitForm = (event) => {
         event.preventDefault();
         this.setState({
@@ -28,12 +28,12 @@ class Contact extends Component {
     }
     getValue = () => {
         var content = '';
-        content += 'Name is: ' +this.state.fName;
-        content += '/Name is: ' +this.state.fEmail;
-        content += '/Phone is: ' +this.state.fPhone;
-        content += '/Message is: ' +this.state.fMessage;
+        content += 'Name is: ' + this.state.fName;
+        content += '/Name is: ' + this.state.fEmail;
+        content += '/Phone is: ' + this.state.fPhone;
+        content += '/Message is: ' + this.state.fMessage;
         return content;
-        
+
     }
     render() {
 
@@ -97,7 +97,13 @@ class Contact extends Component {
                                 <div className="control-group">
                                     <div className="form-group floating-label-form-group controls mb-0 pb-2">
                                         <label>Chọn ngày</label>
-                                        
+
+                                        <select className="form-control" name="fNgay" onChange={this.isChange.bind(this)}>
+                                            <option value="thu3">Ngày thứ 3</option>
+                                            <option value="thu5">Ngày thứ 5</option>
+                                            <option value="thu7">Ngày thứ 7</option>
+                                            <option value="chunhat">Ngày chủ nhật</option>
+                                        </select>
                                         <p className="help-block text-danger" />
                                     </div>
                                 </div>
