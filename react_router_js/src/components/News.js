@@ -1,11 +1,12 @@
 import React, { Component } from 'react';
-import News_Items from './News_Items';
+import NewsItems from './NewsItems';
+import dl from "./JSON/DataABC.json";
 
 class News extends Component {
     render() {
+        console.log(dl);
         return (
-
-            <div>
+            < div >
                 <header className="masthead tintuc">
                     <div className="container h-100">
                         <div className="row h-100">
@@ -20,16 +21,23 @@ class News extends Component {
                 {/* tintuc */}
                 <div className="container mt-5">
                     <div className="row">
-
-                        <News_Items />
-                        <News_Items />
-                        <News_Items />
-                        <News_Items />
-                        <News_Items />
+                        {
+                            dl.map((val, key) => {
+                                return (
+                                    <NewsItems
+                                        key={key}
+                                        tinId = {val.id}
+                                        anh={val.anh}
+                                        tieude={val.tieude}
+                                        trichDan={val.trichDan}
+                                    />
+                                )
+                            })
+                        } 
                     </div>{/* End row */}
                 </div>{/* End container */}
                 {/* End tintuc */}
-            </div>
+            </div >
         );
     }
 }
