@@ -42,7 +42,6 @@ class Contact extends Component {
 
     }
     render() {
-
         if (this.state.isRedirect) {
             console.log(this.getValue());
             return <Redirect to='/' />;
@@ -84,19 +83,22 @@ class Contact extends Component {
                                 </div>
                                 <div className="control-group">
                                     <div className="form-group floating-label-form-group controls mb-0 pb-2">
-                                        <label>Email Address</label><input onChange={this.isChange.bind(this)} name='fEmail' className="form-control" id="email" type="email" placeholder="Email Address" required="required" data-validation-required-message="Please enter your email address." />
+                                        <label>Email Address</label>
+                                        <input onChange={this.isChange.bind(this)} name='fEmail' className="form-control" id="email" type="email" placeholder="Email Address" required="required" data-validation-required-message="Please enter your email address." />
                                         <p className="help-block text-danger" />
                                     </div>
                                 </div>
                                 <div className="control-group">
                                     <div className="form-group floating-label-form-group controls mb-0 pb-2">
-                                        <label>Phone Number</label><input onChange={this.isChange.bind(this)} name='fPhone' className="form-control" id="phone" type="tel" placeholder="Phone Number" required="required" data-validation-required-message="Please enter your phone number." />
+                                        <label>Phone Number</label>
+                                        <input onChange={this.isChange.bind(this)} name='fPhone' className="form-control" id="phone" type="tel" placeholder="Phone Number" required="required" data-validation-required-message="Please enter your phone number." />
                                         <p className="help-block text-danger" />
                                     </div>
                                 </div>
                                 <div className="control-group">
                                     <div className="form-group floating-label-form-group controls mb-0 pb-2">
-                                        <label>Message</label><textarea onChange={this.isChange.bind(this)} name='fMessage' className="form-control" id="message" rows={5} placeholder="Message" required="required" data-validation-required-message="Please enter a message." defaultValue={""} />
+                                        <label>Message</label>
+                                        <textarea onChange={this.isChange.bind(this)} name='fMessage' className="form-control" id="message" rows={5} placeholder="Message" required="required" data-validation-required-message="Please enter a message." defaultValue={""} />
                                         <p className="help-block text-danger" />
                                     </div>
                                 </div>
@@ -113,7 +115,7 @@ class Contact extends Component {
                                         <p className="help-block text-danger" />
                                     </div>
                                 </div>
-                                <div className="control-group">
+                                <div className="control-group"> 
                                     <div className="form-group floating-label-form-group controls mb-0 pb-2">
                                         <label>Chọn ngày</label>
                                         <input onChange={this.isFileChange.bind(this)}  type="file" className="form-control-file" name="fImage"  />

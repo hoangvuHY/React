@@ -4,7 +4,6 @@ import dl from "./JSON/DataABC.json";
 
 class News extends Component {
     render() {
-        console.log(dl);
         return (
             < div >
                 <header className="masthead tintuc">

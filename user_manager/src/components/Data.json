@@ -1,0 +1,32 @@
+[
+    {
+        "id": 1,
+        "name": "Pacific rim",
+        "phone": "09852623552",
+        "permission": 1
+    },
+    {
+        "id": 2,
+        "name": "Ardi beo",
+        "phone": "05654654064",
+        "permission": 2
+    },
+    {
+        "id": 3,
+        "name": "Adiem rime",
+        "phone": "098524544",
+        "permission": 3
+    },
+    {
+        "id": 4,
+        "name": "Orne Fim",
+        "phone": "098925433552",
+        "permission": 1
+    },
+    {
+        "id": 5,
+        "name": "Oemer Lim",
+        "phone": "093323552",
+        "permission": 1
+    }
+]

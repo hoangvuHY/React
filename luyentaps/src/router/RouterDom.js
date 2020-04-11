@@ -12,6 +12,7 @@ class RouterDom extends Component {
         return (
             <Switch>
                 <Route exact path="/home" component={Home} />
+                <Route exact path="/" component={Home} />
                 <Route exact path="/about" component={About} />
                 <Route exact path="/post/:slug.:id.html" component={Post} />
                 <Route exact path="/contact" component={Contact} />

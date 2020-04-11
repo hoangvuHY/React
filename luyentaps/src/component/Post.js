@@ -35,7 +35,7 @@ class Post extends Component {
                                 data.map((val, key) => {
                                     if (val.id === this.props.match.params.id) {
                                         return (
-                                            <div className="jumbotron text-center">
+                                            <div className="jumbotron text-center" key = {key}>
                                                 <img src={val.anh} className="w-100" alt="" />
                                                 <h1 className="display-3">{val.tieude}</h1>
                                                 <p className="lead">{val.trichdan}</p>
@@ -43,6 +43,8 @@ class Post extends Component {
                                                 <p>{val.noidung}</p>
                                             </div>
                                         )
+                                    }else{
+                                        return true;
                                     }
                                 })
                             }
@@ -63,7 +65,11 @@ class Post extends Component {
                                                 anh={val.anh}
                                             />
                                         )
+                                    }else{
+                                        return true;
                                     }
+                                }else{
+                                    return true;
                                 }
                             })
                         }
