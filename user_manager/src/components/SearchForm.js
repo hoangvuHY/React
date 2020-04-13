@@ -1,10 +1,12 @@
 import React, { Component } from 'react';
+import EditUser from './EditUser';
 
 class SearchForm extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            tempValue: ""
+            tempValue: "",
+            userObj:{}
         }
     }
 
@@ -21,6 +23,7 @@ class SearchForm extends Component {
         }
     }
 
+
     isChange = (event) => {
         console.log(event.target.value);
         this.setState({
@@ -29,13 +32,45 @@ class SearchForm extends Component {
         // this.props.checkConnectProps(this.state.tempValue);
     }
 
+
+    getUserEditInfo  = (info) => {
+        this.setState({
+            userObj : info
+        });
+        this.props.getUserEditInfoForApp(info);
+
+        // console.log(info);
+    }
+    //this.props.getUserEditInfoForApp
+
+    isShowEditForm = () => {
+        if (this.props.editUserStatus) {
+            return (
+                //this.props.changeEditUserStatus
+                //this.props.userEditObject
+                <EditUser 
+                getUserEditInfo = {(info)=>{this.getUserEditInfo(info)}}
+
+                changeEditUserStatus = {()=>this.props.changeEditUserStatus()}
+                userEditObject = {this.props.userEditObject}
+                />
+            )
+        } else {
+            return false;
+        }
+    }
+
+
     render() {
 
 
-
+        // console.log(this.state.userObj);
         return (
+            < div className="serchForm" >
 
-            <div className="serchForm">
+                {
+                    this.isShowEditForm()
+                }
                 <div className="form-group d-flex">
                     <div className="btn-group  " role="group" aria-label="Basic example">
                         <input onChange={(event) => this.isChange(event)} type="text" className="form-control w-100" aria-describedby="helpId" placeholder="Nhập tên" />
@@ -47,7 +82,7 @@ class SearchForm extends Component {
                     </div>
                 </div>
                 <hr />
-            </div>
+            </div >
 
         );
     }

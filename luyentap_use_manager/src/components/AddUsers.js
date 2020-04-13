@@ -23,7 +23,7 @@ class AddUsers extends Component {
                                 <option value={3}>Normal</option>
                             </select>
                         </div>
-                        <button type="submit" className="btn btn-primary btn-block">Submit</button>
+                        <button className="btn btn-primary btn-block">Submit</button>
                     </div>
                 </div>
 
