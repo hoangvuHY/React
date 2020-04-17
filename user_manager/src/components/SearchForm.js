@@ -25,7 +25,7 @@ class SearchForm extends Component {
 
 
     isChange = (event) => {
-        console.log(event.target.value);
+        // console.log(event.target.value);
         this.setState({
             tempValue: event.target.value
         });

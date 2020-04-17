@@ -46,13 +46,16 @@ class EditUser extends Component {
                     <div className="card-header text-center">Sửa thông tin User</div>
                     <div className="card-body text-primary">
                         <div className="form-group">
-                            <input onChange={this.isChange.bind(this)} defaultValue={this.props.userEditObject.name} name='name' type="text" className="form-control" aria-describedby="helpId" placeholder="Tên User" />
+                            <input onChange={this.isChange.bind(this)} 
+                            defaultValue={this.props.userEditObject.name} name='name' type="text" className="form-control" aria-describedby="helpId" placeholder="Tên User" />
                         </div>
                         <div className="form-group">
-                            <input onChange={this.isChange.bind(this)} defaultValue={this.props.userEditObject.phone} name='phone' type="phone" className="form-control" aria-describedby="helpId" placeholder="Số điện thoại" />
+                            <input onChange={this.isChange.bind(this)}
+                             defaultValue={this.props.userEditObject.phone} name='phone' type="phone" className="form-control" aria-describedby="helpId" placeholder="Số điện thoại" />
                         </div>
                         <div className="form-group" name='permission'>
-                            <select onChange={this.isChange.bind(this)} defaultValue={this.props.userEditObject.permission} name='permission' className="custom-select">
+                            <select onChange={this.isChange.bind(this)}
+                             defaultValue={this.props.userEditObject.permission} name='permission' className="custom-select">
                                 <option  >Open this select menu</option>
                                 <option value={1}>Admin</option>
                                 <option value={2}>Modorator</option>

@@ -32,7 +32,8 @@ class AddUser extends Component {
                                     <option value={3}>Normal</option>
                                 </select>
                             </div>
-                            <input value="Add User" type="reset" onClick={(name, phone, permission) => this.props.add(this.state.name, this.state.phone, this.state.permission)} 
+                            <input value="Add User" type="reset" 
+                            onClick={(name, phone, permission) => this.props.add(this.state.name, this.state.phone, this.state.permission)} 
                             className="btn btn-primary btn-block" ></input>
                         </div>
                     </div>

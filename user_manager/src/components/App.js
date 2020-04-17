@@ -72,7 +72,6 @@ class App extends React.Component {
         val.permission = parseInt(info.permission);
       }
     })
-
   }
 
 
@@ -140,7 +139,8 @@ class App extends React.Component {
 
               hienThiForm={this.state.hienThiForm}
 
-              add={(name, phone, permission) => this.getUserData(name, phone, permission)}
+              add={(name, phone, permission) =>
+                this.getUserData(name, phone, permission)}
 
             />
           </div>{/* row */}
