@@ -1,19 +1,41 @@
 import React, { Component } from 'react';
 
 class TableData extends Component {
+
+    permissionUser = () => {
+        if (this.props.permission === 1) {
+            return "Admin";
+        } else if (this.props.permission === 2) {
+            return "Moderator";
+
+        } else {
+            return "Normal User";
+        }
+
+    }
+    editButton = () => {
+        this.props.infoEdit();
+        this.props.changeStatusEdit();
+    }
     render() {
+
         return (
+
             <tr>
-                <td >1</td>
-                <td>Trần Đức Lương</td>
-                <td>0324568953</td>
-                <td>Moderator</td>
+                <td > {this.props.stt + 1} </td>
+                <td>{this.props.name}</td>
+                <td>{this.props.phone}</td>
+                <td>
+                    {
+                        this.permissionUser()
+                    }
+                </td>
                 <td>
                     <div className="btn-group" role="group" aria-label="Basic example">
-                        <button type="button" className="btn btn-secondary">
+                        <button onClick={() => this.editButton()} type="button" className="btn btn-secondary">
                             Sửa <i className="fa  fa-edit fa-sm  " />
                         </button>
-                        <button type="button" className="btn btn-danger">
+                        <button onClick={this.props.deleteUser} type="button" className="btn btn-danger">
                             Xóa <i className="fa  fa-trash" />
                         </button>
                     </div>

@@ -12,12 +12,30 @@ class App extends React.Component {
     super(props);
     this.state = {
       hienThiForm: false,
-      dataUse: Data,
+      dataUse: [],
       searchText: '',
       editUserStatus: false,
       userEditObject: {},
     }
   }
+
+
+  componentWillMount() {
+    //Kiểm tra xem có localStorage chưa?
+    if (localStorage.getItem('userData') === null) {
+      localStorage.setItem('userData', JSON.stringify(Data));
+      this.setState({
+        dataUse: JSON.parse(localStorage.getItem('userData'))
+      });
+    }
+    else {
+      this.setState({
+        dataUse: JSON.parse(localStorage.getItem('userData'))
+      });
+    }
+  }
+
+
 
   doiTrangThai = () => {
     this.setState({
@@ -43,7 +61,8 @@ class App extends React.Component {
     this.setState({
       dataUse: items
     });
-    console.log(items);
+    localStorage.setItem('userData', JSON.stringify(items));
+    // console.log(items);
   }
 
 
@@ -72,6 +91,8 @@ class App extends React.Component {
         val.permission = parseInt(info.permission);
       }
     })
+    localStorage.setItem('userData', JSON.stringify(this.state.dataUse));
+
   }
 
 
@@ -89,6 +110,9 @@ class App extends React.Component {
       dataUse: tempData
     });
 
+    //Đẩy vào dữ liệu
+    localStorage.setItem('userData', JSON.stringify(tempData));
+
     /*     tempData.forEach((val, key) => {
     
     
@@ -99,7 +123,7 @@ class App extends React.Component {
         }) */
   }
   render() {
-
+    // localStorage.setItem('userData', JSON.stringify(Data))
     var ketqua = [];
     this.state.dataUse.forEach((item) => {
       if (item.name.indexOf(this.state.searchText) !== -1) {
