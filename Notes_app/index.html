@@ -1,22 +1,110 @@
 <!doctype html>
 <html lang="en">
-  <head>
+
+<head>
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 
     <title>Hello, world!</title>
-  </head>
-  <body>
-    <h1>Hello, world!</h1>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-sm navbar-dark bg-dark">
+        <a class="navbar-brand" href="http://google.com">Google</a>
+        <button class="navbar-toggler d-lg-none" type="button" data-toggle="collapse" data-target="#collapsibleNavId"
+            aria-controls="collapsibleNavId" aria-expanded="false" aria-label="Toggle navigation"></button>
+        <div class="collapse navbar-collapse justify-content-end" id="collapsibleNavId">
+            <ul class="navbar-nav   mt-2 mt-lg-0">
+                <li class="nav-item active">
+                    <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Xem danh sach Notes</a>
+                </li>
+
+            </ul>
+
+        </div>
+    </nav><!-- end menu tren -->
+
+    <div class='container'>
+        <div class='row'>
+            <div class="col">
+                <div id="nodeList" role="tablist" aria-multiselectable="true">
+                    <div class="card">
+                        <div class="card-header" role="tab" id="notes1">
+                            <h5 class="mb-0">
+                                <a data-toggle="collapse" data-parent="#nodeList" href="#notescontent1"
+                                    aria-expanded="true" aria-controls="notescontent1">
+                                    Ghi chú ngày 18/4/2020
+                                </a>
+                            </h5>
+                        </div>
+                        <div id="notescontent1" class="collapse in" role="tabpanel" aria-labelledby="notes1">
+                            <div class="card-body">
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus enim quaerat suscipit
+                                aspernatur corporis in animi, odit nesciunt sapiente quam laboriosam distinctio! Error
+                                expedita, ratione optio dolore doloribus corporis asperiores?
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card-header" role="tab" id="notes2">
+                            <h5 class="mb-0">
+                                <a data-toggle="collapse" data-parent="#nodeList" href="#notescontent2"
+                                    aria-expanded="true" aria-controls="notescontent2">
+                                    Ghi chú 17/4/2020
+                                </a>
+                            </h5>
+                        </div>
+                        <div id="notescontent2" class="collapse in" role="tabpanel" aria-labelledby="notes2">
+                            <div class="card-body">
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus enim quaerat suscipit
+                                aspernatur corporis in animi, odit nesciunt sapiente quam laboriosam distinctio! Error
+                                expedita, ratione optio dolore doloribus corporis asperiores?
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+            <div class="col-4">
+                <h3>Sửa tiêu đề notes</h3>
+                <div class="form-group">
+                    <label for="noteTitle">Tiêu đề note</label>
+                    <input type="text" class="form-control" name="noteTitle" id="noteTitle" aria-describedby="helpId"
+                        placeholder="Tieu de">
+                    <small id="helpId" class="form-text text-muted">Điền tiêu đề vào đây</small>
+                </div>
+                <div class="form-group">
+                    <label for="noteContent">Nội dung note</label>
+                    <textarea type="text" class="form-control" name="noteContent" id="noteContent  " aria-describedby="helpId"
+                        placeholder="Nội dung notes"> </textarea>
+                    <small id="helpId" class="form-text text-muted">Điền tiêu đề vào đây</small>
+                </div>
+                <button type="submit" class="btn btn-primary btn-block">Save</button>
+            </div>
+
+        </div><!-- End row -->
+    </div><!-- End container -->
+    <!-- End contener -->
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
-  </body>
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+        integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+        integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+        crossorigin="anonymous"></script>
+</body>
+
 </html>

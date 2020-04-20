@@ -1,0 +1,17 @@
+{
+  "note1" : {
+    "Title" : "Ngay 18-4-2020",
+    "id" : 2,
+    "notesContent" : "Your security rules are defined as public, so anyone can steal, modify, or delete data in your database"
+  },
+  "note2" : {
+    "Title" : "Ngày 19-4-2020 : Đi chơi",
+    "id" : 1,
+    "noteContent" : "ndimentum faucibus cillum unde exercitation aliquam accusamus, nec neque? Totam harum lectus harum minus posuere quibusdam libero? Officiis impedit magna tempor voluptatibus enim possimus explicabo lacus ducimus imperdiet anim. Velit ante modi numquam iusto tristique, rerum, eiusmod mollit voluptas proident sed veniam reiciendis, bibendum laboriosam doloremque cillum dictumst, molestie, accusantium "
+  },
+  "note3" : {
+    "Title" : "Ngay quan trong",
+    "id" : 3,
+    "notesContent" : "s ratione hymenaeos torquent ex, magnam metus minim wisi aenean imperdiet voluptas proident sit aspernatur accumsan dicta dolor sem, quidem, similique hic, cumque reiciendis cupidatat aliqua molestiae, quae nonummy facere viverra et ad eligendi wisi posuere! Officia? Dignissim pariatur quibusdam natus, tellus pede donec! Beatae iure, tempus? Odit quia, leo repellendus, aliquip ducimus ultrices purus eros diam dicta nostrud blanditii"
+  }
+}
