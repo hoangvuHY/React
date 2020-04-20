@@ -1,4 +1,7 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
+
+
 
 class NoteForm extends Component {
 
@@ -14,37 +17,46 @@ class NoteForm extends Component {
     isChange = (event) => {
         var name = event.target.name;
         var value = event.target.value;
-        console.log(name + "     " + value);
+        // console.log(name + "     " + value);
         this.setState({
             [name]: value
         });
     }
-    
-    addData  = (title,content) => {
+
+    addData = (title, content) => {
+        /* Cach 1 
+                var item = {};
+                item.noteTitle = title;
+                item.noteContent = content;
+                //gửi dữ liệu lên app để app xử lý
+                // console.log(item);
+                this.props.addData(item);
+                 */
+
         var item = {};
         item.noteTitle = title;
         item.noteContent = content;
         //gửi dữ liệu lên app để app xử lý
         // console.log(item);
-        this.props.getData(item);
+        this.props.addDataStore(item);//Su dung reducer trong store . dispatch Add_data
     }
 
     render() {
         return (
             <div className="col-4">
                 <form>
-                <h3>Sửa tiêu đề notes</h3>
-                <div className="form-group">
-                    <label htmlFor="noteTitle">Tiêu đề note</label>
-                    <input onChange = {this.isChange.bind(this)} type="text" className="form-control" name="noteTitle" id="noteTitle" aria-describedby="helpId" placeholder="Tieu de" />
-                    <small id="helpId" className="form-text text-muted">Điền tiêu đề vào đây</small>
-                </div>
-                <div className="form-group">
-                    <label htmlFor="noteContent">Nội dung note</label>
-                    <textarea onChange = {this.isChange.bind(this)}  type="text" className="form-control" name="noteContent" id="noteContent  " aria-describedby="helpId" placeholder="Nội dung notes" defaultValue={" "} />
-                    <small id="helpId" className="form-text text-muted">Điền tiêu đề vào đây</small>
-                </div>
-                <button type="reset" onClick = {()=>this.addData(this.state.noteTitle,this.state.noteContent)} className="btn btn-primary btn-block">Save</button>
+                    <h3>Sửa tiêu đề notes</h3>
+                    <div className="form-group">
+                        <label htmlFor="noteTitle">Tiêu đề note</label>
+                        <input onChange={this.isChange.bind(this)} type="text" className="form-control" name="noteTitle" id="noteTitle" aria-describedby="helpId" placeholder="Tieu de" />
+                        <small id="helpId" className="form-text text-muted">Điền tiêu đề vào đây</small>
+                    </div>
+                    <div className="form-group">
+                        <label htmlFor="noteContent">Nội dung note</label>
+                        <textarea onChange={this.isChange.bind(this)} type="text" className="form-control" name="noteContent" id="noteContent  " aria-describedby="helpId" placeholder="Nội dung notes" defaultValue={" "} />
+                        <small id="helpId" className="form-text text-muted">Điền tiêu đề vào đây</small>
+                    </div>
+                    <button type="reset" onClick={() => this.addData(this.state.noteTitle, this.state.noteContent)} className="btn btn-primary btn-block">Save</button>
                 </form>
             </div>
 
@@ -53,4 +65,24 @@ class NoteForm extends Component {
     }
 }
 
-export default NoteForm;
+const mapStateToProps = (state, ownProps) => {
+    return {
+        testThoi: state.testConnect
+    }
+}
+//this.props.testThoi
+
+const mapDispatchToProps = (dispatch, ownProps) => {
+    return {
+        addDataStore: (getItem) => {
+            dispatch({
+                type: "Add_Data",
+                getItem
+            });
+        }
+    }
+}
+//this.props.addDataStore()
+// export default connect(mapStateToProps, mapDispatchToProps)(NoteForm)
+export default connect(mapStateToProps, mapDispatchToProps)(NoteForm);
+// export default NoteForm;

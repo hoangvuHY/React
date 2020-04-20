@@ -1,5 +1,4 @@
-import * as firebase from 'firebase';
-
+import * as firebase from 'firebase'; 
 var firebaseConfig = {
     apiKey: "AIzaSyA7i1vxpgeKugPsfTbCTjFBAHqhrldgH3M",
     authDomain: "notesreact-e32ff.firebaseapp.com",

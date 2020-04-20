@@ -3,18 +3,19 @@ import React, { Component } from 'react';
 import Nav from './Nav';
 import NoteList from './NoteList';
 import NoteForm from './NoteForm';
-import { noteData } from './noteData';
+// import { noteData } from './noteData';Cach 1
 
 class App extends Component {
 
   constructor(props) {
     super(props);
-    this.state ={};
+    this.state = {};
   }
-  getData  = (item) => {
+  /*Cach 1 
+  addData  = (item) => {
     noteData.push(item);
-  }
-  
+  } */
+
 
   render() {
     /*     console.log(
@@ -29,8 +30,9 @@ class App extends Component {
         <div className="container">
           <div className="row">
             <NoteList />
-            <NoteForm 
-              getData = {(item) => this.getData(item)}
+            <NoteForm
+            //Cach 1
+            //  addData = {(item) => this.addData(item)}
             />
           </div>{/* End row */}
         </div>{/* End container */}
