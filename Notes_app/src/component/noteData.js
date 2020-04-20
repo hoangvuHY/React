@@ -1,4 +1,4 @@
-import * as firebase from 'firebase'
+import * as firebase from 'firebase';
 
 var firebaseConfig = {
     apiKey: "AIzaSyA7i1vxpgeKugPsfTbCTjFBAHqhrldgH3M",
@@ -11,22 +11,5 @@ var firebaseConfig = {
     measurementId: "G-6YLR3KS5N0"
 };
 // Initialize Firebase
-
-// firebase.analytics();
-
-export const firebaseConnect = firebase.initializeApp(firebaseConfig);
-
-var data = firebase.database().ref('dataForNote/note3');
-
-/* Lấy dữ liệu
-    data.once('value').then(function (snapshot) {
-    console.log(snapshot.val());
-}) */ 
-/* Sửa dữ liệu
-
-*/
-data.set({
-    id:3,
-    title:"Tieu de cua note 3",
-    content:"Demo content for note 3"
-})
+firebase.initializeApp(firebaseConfig);
+export const noteData = firebase.database().ref('dataForNote/');
