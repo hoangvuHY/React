@@ -1,42 +1,73 @@
 import React, { Component } from 'react';
-
+import { noteData } from './noteData';
+import NoteItem from './NoteItem';
 class NoteList extends Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            dataFirebase: []
+        }
+    }
+
+    componentWillMount() {
+        noteData.on('value', (notes) => {
+
+            var arrayData = [];
+
+            notes.forEach(element => {
+                var key = element.key;
+                var noteTitle = element.val().noteTitle;
+                var noteContent = element.val().noteContent;
+
+                arrayData.push({
+                    id: key,
+                    noteTitle: noteTitle,
+                    noteContent: noteContent
+                })
+
+            });
+
+            this.setState({
+                dataFirebase: arrayData
+            })
+            console.log(arrayData);
+
+            // console.log(notes.val());
+        });
+        /*         noteData.once('value').then((notes) => {
+                    console.log(notes.val());
+        
+                }) */
+    }
+
+    getData = () => {
+        if (this.state.dataFirebase) {
+            return (
+                this.state.dataFirebase.map((val, key) => {
+                    return (
+                        <NoteItem
+                            key={key}
+                            index = {key}
+                            noteTitle={val.noteTitle}
+                            noteContent={val.noteContent}
+                        />
+                    )
+                })
+            )
+        }
+    }
     render() {
         return (
             <div className="col">
                 <div id="nodeList" role="tablist" aria-multiselectable="true">
-                    <div className="card">
-                        <div className="card-header" role="tab" id="notes1">
-                            <h5 className="mb-0">
-                                <a data-toggle="collapse" data-parent="#nodeList" href="#notescontent1" aria-expanded="true" aria-controls="notescontent1">
-                                    Ghi chú ngày 18/4/2020
-                    </a>
-                            </h5>
-                        </div>
-                        <div id="notescontent1" className="collapse in" role="tabpanel" aria-labelledby="notes1">
-                            <div className="card-body">
-                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus enim quaerat suscipit
-                                aspernatur corporis in animi, odit nesciunt sapiente quam laboriosam distinctio! Error
-                                expedita, ratione optio dolore doloribus corporis asperiores?
-                  </div>
-                        </div>
-                    </div>
-                    <div className="card">
-                        <div className="card-header" role="tab" id="notes2">
-                            <h5 className="mb-0">
-                                <a data-toggle="collapse" data-parent="#nodeList" href="#notescontent2" aria-expanded="true" aria-controls="notescontent2">
-                                    Ghi chú 17/4/2020
-                    </a>
-                            </h5>
-                        </div>
-                        <div id="notescontent2" className="collapse in" role="tabpanel" aria-labelledby="notes2">
-                            <div className="card-body">
-                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus enim quaerat suscipit
-                                aspernatur corporis in animi, odit nesciunt sapiente quam laboriosam distinctio! Error
-                                expedita, ratione optio dolore doloribus corporis asperiores?
-                  </div>
-                        </div>
-                    </div>
+                    {
+                        this.getData()
+                    }{/* 
+                    <NoteItem />
+                    <NoteItem />
+                    <NoteItem />
+                    <NoteItem />
+                    <NoteItem /> */}
                 </div>
             </div>
 
