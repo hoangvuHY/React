@@ -4,6 +4,7 @@ import Accodion from './Accodion';
 import NoteAdd from './NoteAdd';
 // import { noteData } from './firebase'
 import React, { Component } from 'react'
+import { connect } from 'react-redux';
 
 class App extends Component {
   /* Them vao database  
@@ -11,7 +12,17 @@ class App extends Component {
      alert("Them vao thanh cong");
      noteData.push(item);
    } */
+   checkDisplay  = () => {
+     if(this.props.editStatus){
+       return(
 
+        <NoteAdd
+        // Them vao database
+        // getNote={(item) => this.getNote(item)}
+        />
+       )
+     }
+   }
 
   render() {
     return (
@@ -22,10 +33,9 @@ class App extends Component {
             <Accodion
 
             />
-            <NoteAdd
-            // Them vao database
-            // getNote={(item) => this.getNote(item)}
-            />
+            {
+              this.checkDisplay()
+            }
           </div>{/* End row */}
         </div>{/* End container */}
       </div>
@@ -33,5 +43,10 @@ class App extends Component {
   }
 }
 
-
-export default App;
+const mapStateToProps = (state, ownProps) => {
+  return {
+    editStatus: state.editStatus
+  }
+}
+export default connect(mapStateToProps)(App);
+// export default App;

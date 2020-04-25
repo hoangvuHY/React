@@ -12,11 +12,10 @@ class Accodion extends Component {
 
     componentWillMount() {
         noteData.on('value', (notes) => {
-            // console.log(notes.val());
             var arrayData = [];
 
             notes.forEach((val, key) => {
-                // console.log(val.noteTitle);
+
                 var item = {};
                 item.id = val.key;
                 item.noteTitle = val.val().noteTitle;
@@ -34,7 +33,7 @@ class Accodion extends Component {
     }
 
     fullData = () => {
-        console.log('chay duoc');
+        // console.log('chay duoc');
         if (this.state.arrayDatas) {
             return (
                 this.state.arrayDatas.map(
@@ -42,6 +41,7 @@ class Accodion extends Component {
                         return (
 
                             <NoteItem
+                                note = {val}
                                 key={key}
                                 id={val.id}
                                 noteTitle={val.noteTitle}
@@ -56,7 +56,7 @@ class Accodion extends Component {
     }
 
     render() {
-        console.log((this.state.arrayDatas));
+        // console.log((this.state.arrayDatas));        
         return (
             <div className="col">
                 <div className="accordion" id="accordionExample">
