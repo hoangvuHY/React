@@ -4,6 +4,7 @@ import Nav from './Nav';
 import NoteList from './NoteList';
 import NoteForm from './NoteForm';
 // import { noteData } from './noteData';Cach 1
+import { connect } from 'react-redux';
 
 class App extends Component {
 
@@ -16,6 +17,16 @@ class App extends Component {
     noteData.push(item);
   } */
 
+  showForm = () => {
+    if (this.props.isEditApp) {
+      return (
+        <NoteForm
+        //Cach 1
+        //  addData = {(item) => this.addData(item)}
+        />
+      )
+    }
+  }
 
   render() {
     /*     console.log(
@@ -30,10 +41,13 @@ class App extends Component {
         <div className="container">
           <div className="row">
             <NoteList />
-            <NoteForm
+            {/* <NoteForm
             //Cach 1
             //  addData = {(item) => this.addData(item)}
-            />
+            /> */}
+            {
+              this.showForm()
+            }
           </div>{/* End row */}
         </div>{/* End container */}
 
@@ -41,5 +55,12 @@ class App extends Component {
     );
   }
 }
+const mapStateToProps = (state, ownProps) => {
+  return {
+    isEditApp: state.isEdit
+  }
+  // this.props.isEditApp
+}
+ 
 
-export default App;
+export default connect(mapStateToProps )(App);

@@ -30,7 +30,7 @@ class NoteList extends Component {
             this.setState({
                 dataFirebase: arrayData
             })
-            console.log(arrayData);
+            // console.log(arrayData);
 
             // console.log(notes.val());
         });
@@ -44,8 +44,12 @@ class NoteList extends Component {
         if (this.state.dataFirebase) {
             return (
                 this.state.dataFirebase.map((val, key) => {
+                    // console.log(val.id);
+                    // console.log(val);
                     return (
                         <NoteItem
+                            note = {val}
+
                             key={key}
                             index={key}
                             noteTitle={val.noteTitle}

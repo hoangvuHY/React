@@ -1,6 +1,21 @@
 import React, { Component } from 'react'
+import { connect } from 'react-redux';
 
-export default class NoteItem extends Component {
+
+class NoteItem extends Component {
+
+    twoActionButton = () => {
+        var trueOrFalse = true;
+        this.props.changeEditStatus(trueOrFalse);//Thay đổi trạng thái của edit trong store
+        //hàm lấy nd từ store để store update dữ liệu
+        // this.props.note;
+        ;
+        // console.log(this.props.note);
+        this.props.getEditData(this.props.note);
+    }
+    deleteData = () => {
+        this.props.getDeleteData(this.props.note.id);
+    }
     render() {
         return (
             <div className="card">
@@ -12,8 +27,8 @@ export default class NoteItem extends Component {
                     </h5>
 
                     <div className="btn-group" role="group">
-                        <button type="button" className="btn btn-secondary">Edit</button>
-                        <button type="button" className="btn btn-secondary">Delete</button>
+                        <button onClick={() => this.twoActionButton()} type="button" className="btn btn-warning">Edit</button>
+                        <button onClick={() => this.deleteData()} type="button" className="btn btn-danger">Delete</button>
                     </div>
                 </div>
                 <div id={"number" + this.props.index} className="collapse in" role="tabpanel" aria-labelledby="notes1">
@@ -26,3 +41,33 @@ export default class NoteItem extends Component {
         )
     }
 }
+
+const mapStateToProps = (state, ownProps) => {
+    return {
+        isEditNoteItem: state.isEdit
+    }
+}
+const mapDispatchToProps = (dispatch, ownProps) => {
+    return {
+        changeEditStatus: (trueOrFalse) => {
+            dispatch({
+                type: "CHANGE_EDIT_STATUS",
+                trueOrFalse
+            })
+        },
+        getEditData: (editObject) => {
+            dispatch({
+                type: "GET_EDIT_DATA",
+                editObject
+            })
+        },
+        getDeleteData: (deleteID) => {
+            dispatch({
+                type: "DELETE",
+                deleteID
+            })
+        }
+    }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(NoteItem);
