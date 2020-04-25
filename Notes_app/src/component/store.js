@@ -4,7 +4,10 @@ var redux = require('redux');
 
 const noteInitialState = {
     isEdit: false,
-    editItem: {}
+    editItem: {},
+    isAdd: false,
+    alertShow: false,
+    alertContent: '',
 }
 const allReducer = (state = noteInitialState, action) => {
     switch (action.type) {
@@ -29,6 +32,16 @@ const allReducer = (state = noteInitialState, action) => {
             // console.log(action.deleteData);
             noteData.child(action.deleteID).remove();
             return state;
+
+        case 'CHANGE_ADD_STATUS':
+            return { ...state, isAdd: action.isAdd };
+
+        case 'ALERT_ON':
+            return { ...state, alertShow: true, alertContent: action.alertContent };
+        case 'ALERT_OFF':
+            return { ...state, alertShow: false };
+
+
 
         default:
             return state

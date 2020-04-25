@@ -5,6 +5,8 @@ import { connect } from 'react-redux';
 class NoteItem extends Component {
 
     twoActionButton = () => {
+
+
         var trueOrFalse = true;
         this.props.changeEditStatus(trueOrFalse);//Thay đổi trạng thái của edit trong store
         //hàm lấy nd từ store để store update dữ liệu
@@ -12,9 +14,12 @@ class NoteItem extends Component {
         ;
         // console.log(this.props.note);
         this.props.getEditData(this.props.note);
+
+        
     }
     deleteData = () => {
         this.props.getDeleteData(this.props.note.id);
+        this.props.alertOn("Xóa thành công")
     }
     render() {
         return (
@@ -44,7 +49,8 @@ class NoteItem extends Component {
 
 const mapStateToProps = (state, ownProps) => {
     return {
-        isEditNoteItem: state.isEdit
+        isEditNoteItem: state.isEdit,
+
     }
 }
 const mapDispatchToProps = (dispatch, ownProps) => {
@@ -66,7 +72,18 @@ const mapDispatchToProps = (dispatch, ownProps) => {
                 type: "DELETE",
                 deleteID
             })
-        }
+        },
+        changeAddStatus: (isAdd) => {
+            dispatch({
+                type: "CHANGE_ADD_STATUS"
+            })
+        },
+        alertOn: (alertContent) => {
+            dispatch({
+                type: "ALERT_ON",
+                alertContent
+            })
+        },
     }
 }
 

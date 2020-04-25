@@ -10,7 +10,7 @@ class NoteForm extends Component {
         this.state = {
             noteTitle: '',
             noteContent: '',
-            id: ''
+            id: '',
         }
     }
 
@@ -54,6 +54,8 @@ class NoteForm extends Component {
          */
         if (this.state.id) {//edit case
             // alert("Dang sua thoi");
+
+
             var editObjet = {};
             editObjet.id = this.state.id;
             editObjet.noteContent = content;
@@ -64,8 +66,12 @@ class NoteForm extends Component {
 
             var trueOrFalse = false;
             this.props.changeEditStatus(trueOrFalse);
+
+            this.props.alertOn("Sửa thành công");
+
         }
         else {
+
 
             var item = {};
             item.noteTitle = title;
@@ -74,16 +80,31 @@ class NoteForm extends Component {
             // console.log(item);
             this.props.addDataStore(item);//Su dung reducer trong store . dispatch Add_data
 
+            var trueOrFalse = false;
+            this.props.changeEditStatus(trueOrFalse);
+
+            this.props.alertOn("Thêm mới thành công");
+
         }
 
     }
-
+    printTitle = () => {
+        if (this.props.addStatus) {
+            return "Thêm mới nội dung"
+        } else {
+            return 'Sửa nội dung'
+        }
+    }
     render() {
         // console.log(this.props.editItem);
         return (
             <div className="col-4">
                 <form>
-                    <h3>Sửa tiêu đề notes</h3>
+                    <h3>
+                        {
+                            this.printTitle()
+                        }
+                    </h3>
                     <div className="form-group">
                         <label htmlFor="noteTitle">Tiêu đề note</label>
                         <input defaultValue={this.props.editItem.noteTitle} onChange={this.isChange.bind(this)} type="text" className="form-control" name="noteTitle" id="noteTitle" aria-describedby="helpId" placeholder="Tieu de" />
@@ -105,7 +126,9 @@ class NoteForm extends Component {
 
 const mapStateToProps = (state, ownProps) => {
     return {
-        editItem: state.editItem
+        editItem: state.editItem,
+        addStatus: state.isAdd
+
     }
 }
 //this.props.editItem
@@ -124,11 +147,26 @@ const mapDispatchToProps = (dispatch, ownProps) => {
                 getItem
             });
         },
-        changeEditStatus: () => {
+        changeEditStatus: (trueOrFalse) => {
             dispatch({
-                type: "CHANGE_EDIT_STATUS"
+                type: "CHANGE_EDIT_STATUS",
+                trueOrFalse
             })
-        }
+        },
+        alertOn: (alertContent) => {
+            dispatch({
+                type: "ALERT_ON",
+                alertContent
+            })
+        },
+        alertOff: () => {
+            dispatch({
+                type: "ALERT_OFF",
+            })
+        },
+
+        //CHANGE_TITLE
+
     }
 }
 //this.props.addDataStore()

@@ -3,6 +3,7 @@ import React, { Component } from 'react';
 import Nav from './Nav';
 import NoteList from './NoteList';
 import NoteForm from './NoteForm';
+import AlertInfo from './AlertInfo';
 // import { noteData } from './noteData';Cach 1
 import { connect } from 'react-redux';
 
@@ -38,6 +39,7 @@ class App extends Component {
 
       <div>
         <Nav />
+        <AlertInfo/>
         <div className="container">
           <div className="row">
             <NoteList />
